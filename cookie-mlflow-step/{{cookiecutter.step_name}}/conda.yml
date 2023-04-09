@@ -1,8 +1,9 @@
-name: {{cookiecutter.step_name}}
+name: { { cookiecutter.step_name } }
 channels:
   - conda-forge
   - defaults
 dependencies:
+  - python=3.7
   - pip=20.3.3
   - pip:
       - wandb==0.10.31
