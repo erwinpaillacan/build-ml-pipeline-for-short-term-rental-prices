@@ -67,9 +67,27 @@ def test_similar_neigh_distrib(
 ########################################################
 # Implement here test_row_count and test_price_range   #
 ########################################################
-def test_row_count(data):
+def test_row_count(data: pd.DataFrame):
+    """
+    The function checks if the number of rows in a given pandas DataFrame falls between 15000 and
+    1000000.
+
+    Args:
+      data (pd.DataFrame): The parameter `data` is a pandas DataFrame that contains some data.
+    """
     assert 15000 < data.shape[0] < 1000000
 
 
-def test_price_range(data, min_price, max_price):
+def test_price_range(data: pd.DataFrame, min_price: float, max_price: float):
+    """
+    The function tests whether all prices in a given DataFrame fall within a specified price range.
+
+    Args:
+      data (pd.DataFrame): The input data is a pandas DataFrame that contains information about
+    products, including their prices.
+      min_price (float): The minimum price value that the "price" column in the input DataFrame should
+    have.
+      max_price (float): The "max_price" parameter is a float value representing the maximum price
+    allowed in a price range.
+    """
     assert data["price"].between(min_price, max_price).all()
